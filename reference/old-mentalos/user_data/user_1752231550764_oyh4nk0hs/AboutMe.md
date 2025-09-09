@@ -1,0 +1,3 @@
+- Working on transforming mental health globally.
+- Passionate about improving access to mental health resources and destigmatizing mental illness.
+- Looking to integrate technology and mental health support.

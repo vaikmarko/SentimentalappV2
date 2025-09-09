@@ -1,0 +1,5 @@
+- Working on transforming mental health globally.
+- Passionate about improving access to mental health care.
+- Interested in destigmatizing mental health issues and promoting mental wellness.
+- Currently exploring different modalities for therapeutic interventions.
+- [Add more details about specific aspects of mental health you are passionate about improving.]

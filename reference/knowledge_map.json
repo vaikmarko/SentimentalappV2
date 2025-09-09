@@ -1,0 +1,62 @@
+{
+  "AboutMe.md": {
+    "fields": {
+      "Name": "[Your name here]",
+      "Age & Life Stage": "[e.g., 28, Early career professional]",
+      "Location": "[City, Country]",
+      "Current Role": "[Job, student, parent, etc.]",
+      "Relationship Status": "[Single, partnered, married, etc.]"
+    }
+  },
+  "personality-traits.md": {
+    "interview": [
+      "How would your close friends describe your personality?",
+      "What trait do you feel most proud of?",
+      "Describe a situation where that trait helped you succeed.",
+      "Is there a trait you wish to develop or change?",
+      "How do you react to new situations?"
+    ]
+  },
+  "values.md": {
+    "interview": [
+      "What principles or ideas do you hold most important in life?",
+      "Can you recall a time when one of your core values guided a difficult decision?",
+      "Which value do you think you practice consistently and why?",
+      "Are there any values you aspire to live up to more fully?",
+      "How do your values influence your relationships and career choices?",
+      "Have your core values changed over time? Give an example.",
+      "When your actions don’t align with your values, how do you feel and respond?"
+    ]
+  },
+  "communication-style.md": {
+    "interview": [
+      "How would you describe your usual communication style (e.g., direct, diplomatic, reserved)?",
+      "Can you share a recent conversation where you felt truly heard? What made it work?",
+      "Describe a situation where miscommunication led to conflict. What happened?",
+      "When you need to express disagreement, how do you typically approach it?",
+      "What feedback have others given you about your communication habits?",
+      "Which aspect of your communication would you like to improve or tweak?"
+    ]
+  },
+  "goals-aspirations.md": {
+    "interview": [
+      "What short-term goal feels most exciting right now?",
+      "Looking ahead five years, what vision do you see for yourself?",
+      "Which life domain (career, relationships, health, etc.) do you most want to grow in?",
+      "What motivates you to pursue these goals?",
+      "Can you describe a past achievement that shows you can reach big goals?",
+      "What obstacles or fears could stand in the way, and how might you handle them?"
+    ]
+  },
+  "romantic-relationships.md": {
+    "interview": [
+      "How would you characterise your ideal romantic relationship?",
+      "What qualities do you value most in a partner?",
+      "Can you share an experience that taught you something important about love?",
+      "How do you typically handle conflict in romantic relationships?",
+      "What patterns (healthy or unhealthy) have you noticed repeating?",
+      "How do you express affection and feel loved in return?",
+      "What personal growth would support healthier relationships for you?"
+    ]
+  }
+} 

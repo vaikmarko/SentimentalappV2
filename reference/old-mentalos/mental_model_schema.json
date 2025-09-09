@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MentalOS Knowledge Object",
+  "description": "Structured objects that the extraction agent can emit to update markdown files in MentalOS.",
+  "type": "object",
+  "oneOf": [
+    {
+      "title": "PlaceholderUpdate",
+      "description": "Insert or overwrite a single placeholder value inside a markdown file table row.",
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "placeholder_update"
+        },
+        "file": {
+          "type": "string",
+          "description": "Relative path of the markdown file to modify (e.g. AboutMe.md)."
+        },
+        "field": {
+          "type": "string",
+          "description": "The specific placeholder / field name inside that file (e.g. Name, Age & Life Stage)."
+        },
+        "value": {
+          "type": "string",
+          "description": "The value extracted from the user message to insert for that field."
+        }
+      },
+      "required": ["kind", "file", "field", "value"],
+      "additionalProperties": false
+    },
+    {
+      "title": "TherapistNote",
+      "description": "Private note captured by the therapist agent – saved to a therapist-only file.",
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "therapist_note"
+        },
+        "file": {
+          "type": "string",
+          "description": "Path of the therapist notebook markdown file (e.g. TherapistNotes/private.md)."
+        },
+        "note": {
+          "type": "string",
+          "description": "Free-text note or hypothesis the therapist wants to store."  
+        }
+      },
+      "required": ["kind", "file", "note"],
+      "additionalProperties": false
+    },
+    {
+      "title": "SummaryUpdate",
+      "description": "Write or replace a full markdown section (h2/h3) within a file (e.g. automatic session summary).",
+      "type": "object",
+      "properties": {
+        "kind": { "const": "summary_update" },
+        "file": { "type": "string", "description": "Relative path of the markdown file to modify." },
+        "section": { "type": "string", "description": "Heading text of the section (case-insensitive, without #)." },
+        "markdown": { "type": "string", "description": "Markdown content that replaces the section body." },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "default": 1 }
+      },
+      "required": ["kind", "file", "section", "markdown"],
+      "additionalProperties": false
+    },
+    {
+      "title": "Conclusion",
+      "description": "Store a therapist conclusion or inference backed by evidence lines/messages.",
+      "type": "object",
+      "properties": {
+        "kind": { "const": "conclusion" },
+        "file": { "type": "string", "description": "File to append the conclusion to (default TherapistNotes/private.md)." },
+        "tag": { "type": "string", "description": "Short slug identifying the conclusion (e.g. attachment_style)." },
+        "text": { "type": "string", "description": "One-sentence conclusion or hypothesis." },
+        "evidence": { "type": "array", "items": { "type": "string" }, "description": "List of message excerpts or line numbers that support the conclusion." },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.8 }
+      },
+      "required": ["kind", "tag", "text"],
+      "additionalProperties": false
+    },
+    {
+      "title": "CrossLink",
+      "description": "Link content between two files when a relationship is detected (e.g. a value informing a goal).",
+      "type": "object",
+      "properties": {
+        "kind": { "const": "cross_link" },
+        "from_file": { "type": "string" },
+        "to_file": { "type": "string" },
+        "reason": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.9 }
+      },
+      "required": ["kind", "from_file", "to_file", "reason"],
+      "additionalProperties": false
+    }
+  ],
+  "examples": [
+    {
+      "kind": "placeholder_update",
+      "file": "AboutMe.md",
+      "field": "Location",
+      "value": "Tallinn, Estonia / United States"
+    },
+    {
+      "kind": "therapist_note",
+      "file": "TherapistNotes/private.md",
+      "note": "Client motivated by US market size; explore underlying reasons"
+    },
+    {
+      "kind": "summary_update",
+      "file": "SessionSummaries/2025-07-14.md",
+      "section": "Key Insights",
+      "markdown": "- The client feels anxious about launching in a new market.\n- Identified coping mechanism: morning journaling.",
+      "confidence": 0.95
+    },
+    {
+      "kind": "conclusion",
+      "tag": "core_motivation",
+      "text": "Client is driven by a desire for autonomy and impact.",
+      "evidence": ["I want to build something that matters", "I prefer setting my own schedule"],
+      "confidence": 0.8
+    },
+    {
+      "kind": "cross_link",
+      "from_file": "values.md",
+      "to_file": "goals-aspirations.md",
+      "reason": "Value *Impact* directly relates to goal of launching in the US market",
+      "confidence": 0.9
+    }
+  ]
+} 
