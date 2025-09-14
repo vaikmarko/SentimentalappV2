@@ -8,10 +8,11 @@ Like Cursor makes non-coders feel like programming wizards, we're making people 
 ## 📚 Complete Documentation Suite
 
 ### 🎯 **Start Here: Core Documents**
-1. **[📋 Complete Development Plan](docs/COMPLETE_DEVELOPMENT_PLAN.md)** - Everything needed to build this successfully
-2. **[🏗️ Technical Specifications](docs/TECHNICAL_SPECIFICATIONS.md)** - Detailed implementation guide  
-3. **[🧪 Testing Plan](docs/TESTING_PLAN.md)** - Comprehensive testing strategy
-4. **[📁 Legacy Documentation](docs/legacy/)** - Reference from original system
+1. **[🧠 Chat Memory & Context](CHAT_MEMORY.md)** - **READ FIRST** - Complete project memory and vision
+2. **[📋 Complete Development Plan](docs/COMPLETE_DEVELOPMENT_PLAN.md)** - Everything needed to build this successfully
+3. **[🏗️ Technical Specifications](docs/TECHNICAL_SPECIFICATIONS.md)** - Detailed implementation guide  
+4. **[🧪 Testing Plan](docs/TESTING_PLAN.md)** - Comprehensive testing strategy
+5. **[📁 Legacy Documentation](docs/legacy/)** - Reference from original system
 
 ### 🚀 **What Makes This Revolutionary**
 
